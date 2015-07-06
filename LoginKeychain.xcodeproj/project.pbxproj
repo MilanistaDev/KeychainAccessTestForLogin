@@ -14,6 +14,10 @@
 		FB876D181B4232DA00299503 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB876D171B4232DA00299503 /* Images.xcassets */; };
 		FB876D1B1B4232DA00299503 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB876D191B4232DA00299503 /* LaunchScreen.xib */; };
 		FB876D271B4232DB00299503 /* LoginKeychainTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB876D261B4232DB00299503 /* LoginKeychainTests.m */; };
+		FB876D3E1B423D9B00299503 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB876D3D1B423D9B00299503 /* Security.framework */; };
+		FB876D411B42562B00299503 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB876D401B42562B00299503 /* MainViewController.m */; };
+		FD10BE981B49171D00DC5DBB /* LUKeychainAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = FD10BE931B49171D00DC5DBB /* LUKeychainAccess.m */; };
+		FD10BE991B49171D00DC5DBB /* LUKeychainServices.m in Sources */ = {isa = PBXBuildFile; fileRef = FD10BE971B49171D00DC5DBB /* LUKeychainServices.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,16 @@
 		FB876D201B4232DB00299503 /* LoginKeychainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginKeychainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB876D251B4232DB00299503 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB876D261B4232DB00299503 /* LoginKeychainTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginKeychainTests.m; sourceTree = "<group>"; };
+		FB876D3D1B423D9B00299503 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FB876D3F1B42562B00299503 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		FB876D401B42562B00299503 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		FD10BE911B49171D00DC5DBB /* LUKeychainAccess-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LUKeychainAccess-Prefix.pch"; sourceTree = "<group>"; };
+		FD10BE921B49171D00DC5DBB /* LUKeychainAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUKeychainAccess.h; sourceTree = "<group>"; };
+		FD10BE931B49171D00DC5DBB /* LUKeychainAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUKeychainAccess.m; sourceTree = "<group>"; };
+		FD10BE941B49171D00DC5DBB /* LUKeychainAccessAccessibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUKeychainAccessAccessibility.h; sourceTree = "<group>"; };
+		FD10BE951B49171D00DC5DBB /* LUKeychainErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUKeychainErrorHandler.h; sourceTree = "<group>"; };
+		FD10BE961B49171D00DC5DBB /* LUKeychainServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LUKeychainServices.h; sourceTree = "<group>"; };
+		FD10BE971B49171D00DC5DBB /* LUKeychainServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LUKeychainServices.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB876D3E1B423D9B00299503 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,13 +96,11 @@
 		FB876D091B4232D900299503 /* LoginKeychain */ = {
 			isa = PBXGroup;
 			children = (
-				FB876D0E1B4232DA00299503 /* AppDelegate.h */,
-				FB876D0F1B4232DA00299503 /* AppDelegate.m */,
-				FB876D111B4232DA00299503 /* ViewController.h */,
-				FB876D121B4232DA00299503 /* ViewController.m */,
-				FB876D141B4232DA00299503 /* Main.storyboard */,
+				FB876D311B42330E00299503 /* Controllers */,
+				FB876D301B42330700299503 /* Views */,
+				FB876D321B42331400299503 /* Libraries */,
+				FB876D3C1B423D7700299503 /* Frameworks */,
 				FB876D171B4232DA00299503 /* Images.xcassets */,
-				FB876D191B4232DA00299503 /* LaunchScreen.xib */,
 				FB876D0A1B4232DA00299503 /* Supporting Files */,
 			);
 			path = LoginKeychain;
@@ -117,6 +130,50 @@
 				FB876D251B4232DB00299503 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB876D301B42330700299503 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB876D141B4232DA00299503 /* Main.storyboard */,
+				FB876D191B4232DA00299503 /* LaunchScreen.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FB876D311B42330E00299503 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB876D0E1B4232DA00299503 /* AppDelegate.h */,
+				FB876D0F1B4232DA00299503 /* AppDelegate.m */,
+				FB876D111B4232DA00299503 /* ViewController.h */,
+				FB876D121B4232DA00299503 /* ViewController.m */,
+				FB876D3F1B42562B00299503 /* MainViewController.h */,
+				FB876D401B42562B00299503 /* MainViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FB876D321B42331400299503 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				FD10BE911B49171D00DC5DBB /* LUKeychainAccess-Prefix.pch */,
+				FD10BE921B49171D00DC5DBB /* LUKeychainAccess.h */,
+				FD10BE931B49171D00DC5DBB /* LUKeychainAccess.m */,
+				FD10BE941B49171D00DC5DBB /* LUKeychainAccessAccessibility.h */,
+				FD10BE951B49171D00DC5DBB /* LUKeychainErrorHandler.h */,
+				FD10BE961B49171D00DC5DBB /* LUKeychainServices.h */,
+				FD10BE971B49171D00DC5DBB /* LUKeychainServices.m */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		FB876D3C1B423D7700299503 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB876D3D1B423D9B00299503 /* Security.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,11 +220,12 @@
 		FB876CFF1B4232D900299503 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Takuya ASO";
 				TargetAttributes = {
 					FB876D061B4232D900299503 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 7M7ZGYSAKB;
 					};
 					FB876D1F1B4232DB00299503 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -219,8 +277,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB876D411B42562B00299503 /* MainViewController.m in Sources */,
+				FD10BE981B49171D00DC5DBB /* LUKeychainAccess.m in Sources */,
 				FB876D131B4232DA00299503 /* ViewController.m in Sources */,
 				FB876D101B4232DA00299503 /* AppDelegate.m in Sources */,
+				FD10BE991B49171D00DC5DBB /* LUKeychainServices.m in Sources */,
 				FB876D0D1B4232DA00299503 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +344,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -345,8 +407,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LoginKeychain/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ASTK.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -355,8 +420,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = LoginKeychain/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ASTK.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -375,6 +443,7 @@
 				);
 				INFOPLIST_FILE = LoginKeychainTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ASTK.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoginKeychain.app/LoginKeychain";
 			};
@@ -390,6 +459,7 @@
 				);
 				INFOPLIST_FILE = LoginKeychainTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ASTK.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoginKeychain.app/LoginKeychain";
 			};
@@ -414,6 +484,7 @@
 				FB876D2C1B4232DB00299503 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB876D2D1B4232DB00299503 /* Build configuration list for PBXNativeTarget "LoginKeychainTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +493,7 @@
 				FB876D2F1B4232DB00299503 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

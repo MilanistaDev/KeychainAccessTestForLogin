@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  MainViewController.h
 //  LoginKeychain
 //
 //  Created by SDT-B003 on 2015/06/30.
@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-
-@property (strong, nonatomic) UIWindow *window;
-
+@interface MainViewController : UIViewController
 
 @end
-

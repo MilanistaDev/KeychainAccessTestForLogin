@@ -6,7 +6,16 @@
 //  Copyright (c) 2015年 Takuya ASO. All rights reserved.
 //
 
+/*
+ Special Thanks
+ LUKeychainAccess
+ Copyright 2012-2013 SCVNGR, Inc D.B.A. LevelUp.
+ Released under the MIT license
+ https://github.com/TheLevelUp/LUKeychainAccess
+ */
+
 #import "AppDelegate.h"
+#import "LUKeychainAccess.h"    // 追加
 
 @interface AppDelegate ()
 
@@ -16,7 +25,33 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    UIViewController *initialViewController;
+    
+    // ALREADY_LOGIN の Key に YES が入っているかどうか
+    BOOL key = [[LUKeychainAccess standardKeychainAccess] boolForKey:@"ALREADYLOGIN"];
+    NSLog(@"KEYCHAIN= %d", key);
+    
+    // 一回ログイン画面に飛んで，自動ログインしますか？アラートを出して確認とるほうがいいかも知れません。
+    // 今回は自動ログイン，ログイン画面をスキップしてメインコンテンツ画面へ
+    if (key == YES) {
+        
+        // ストーリーボードを取得，遷移先の Viewは？，initialViewController(最初に開く画面) に設定
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"MainContent"];
+        initialViewController = vc;
+        
+    } else {
+    // なければログイン画面に飛ばしてログインしてね
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"Login"];
+        initialViewController = vc;
+    }
+    
+    self.window.rootViewController = initialViewController;
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 
@@ -41,5 +76,8 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+
 
 @end
